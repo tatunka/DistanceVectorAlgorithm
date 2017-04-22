@@ -1,6 +1,8 @@
 package graph;
 
-public class Graph {
+import java.util.Iterator;
+
+public class Graph{
 	
 	static int[][] COSTS;
 	static Node[] GRAPH;
@@ -18,5 +20,28 @@ public class Graph {
 		COSTS[2][0] = 7;							//c(z,x) = 7
 		COSTS[2][1] = 1;							//c(z,y) = 1
 		COSTS[2][2] = 0;							//c(z,z) = 0
+		
+		Node x = new XNode();
+		Node y = new YNode();
+		Node z = new YNode();
+		
+		x.addConnections(y, z);
+		y.addConnections(x, z);
+		z.addConnections(x, y);
+	}
+	
+	public int size(){return GRAPH.length;}
+	public Node[] getGraph(){return GRAPH;}
+
+	public boolean hasActive() {
+		for(int i=0; i<GRAPH.length; i++){
+			if(GRAPH[0].isActive())
+				return true;
+		}
+		return false;
+	}
+
+	public int getCost(Node v, Node w) {
+		return COSTS[v.index()][w.index()];
 	}
 }

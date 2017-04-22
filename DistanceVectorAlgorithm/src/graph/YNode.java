@@ -2,7 +2,10 @@ package graph;
 
 public class YNode extends Node{
 
-	public YNode(){super();}
+	public YNode(){
+		super();
+		_index = 1;
+	}
 	
 	@Override
 	protected void initDVs() {

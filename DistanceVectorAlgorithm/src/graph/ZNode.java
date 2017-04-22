@@ -2,7 +2,10 @@ package graph;
 
 public class ZNode extends Node{
 	
-	public ZNode(){super();}
+	public ZNode(){
+		super();
+		_index = 2;
+	}
 
 	@Override
 	protected void initDVs() {
