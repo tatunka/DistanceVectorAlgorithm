@@ -10,9 +10,8 @@ public abstract class Node {
 	public Node(){
 		_active = false;
 		_dv = new int[3][3];
-		initDVs();
+		_connections = new Node[2];
 	}	
-	protected abstract void initDVs();
 	
 	protected void addConnections(Node a, Node b){
 		_connections[0] = a;

@@ -5,10 +5,6 @@ public class ZNode extends Node{
 	public ZNode(){
 		super();
 		_index = 2;
-	}
-
-	@Override
-	protected void initDVs() {
 		for(int i=0; i<3; i++)
 			for(int j=0; j<2; j++)
 				_dv[j][i] = 99999;
